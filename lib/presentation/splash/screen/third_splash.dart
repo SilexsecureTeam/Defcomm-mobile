@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:defcomm_mobile/core/theme/app_colors.dart';
 import 'package:defcomm_mobile/presentation/splash/screen/fouth_splash.dart';
 import 'package:defcomm_mobile/presentation/splash/screen/second_splash.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,10 @@ class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
             Container(
               decoration: BoxDecoration(
                 gradient: LinearGradient(
-                  colors: [Colors.green.withOpacity(0.4), Colors.transparent],
+                  colors: [
+                    AppColors.primaryColor.withOpacity(0.6),
+                    Colors.transparent,
+                  ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                 ),
