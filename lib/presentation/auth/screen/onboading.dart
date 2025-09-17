@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:defcomm_mobile/core/theme/app_colors.dart';
 import 'package:defcomm_mobile/core/theme/app_fonts.dart';
 import 'package:defcomm_mobile/presentation/Auth/widgets/check_point_items.dart';
+import 'package:defcomm_mobile/presentation/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
 
@@ -12,6 +15,18 @@ class OnboadingScreen extends StatefulWidget {
 }
 
 class _OnboadingScreenState extends State<OnboadingScreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(const Duration(seconds: 5), () {
+      if (mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +85,7 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
                     width: 266, // adjust to fit your layout
                     backgroundColor: Colors.grey.shade800, // background track
                     foregroundColor: Colors.grey.shade400, // progress color
-                    ratio: 0.7, // progress percentage (0.0 to 1.0)
+                    ratio: 1.0, // progress percentage (0.0 to 1.0)
                     direction: Axis.horizontal,
                     curve: Curves.fastLinearToSlowEaseIn,
                     borderRadius: BorderRadius.circular(20),
