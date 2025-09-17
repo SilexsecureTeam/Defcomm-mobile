@@ -14,6 +14,7 @@ class VerifyOtpScreen extends StatefulWidget {
 
 class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
   String otpCode = '';
+  bool isFocused = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,10 +87,21 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                     width: 250,
                     child: PinCodeTextField(
                       onCompleted: (value) {
-                        goToPage(context, page: OnboadingScreen());
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => OnboadingScreen(),
+                          ),
+                        );
+                        //goToPage(context, page: OnboadingScreen());
                       },
                       appContext: context,
                       length: 4,
+                      onTap: () {
+                        setState(() {
+                          isFocused = true;
+                        });
+                      },
                       onChanged: (value) {
                         setState(() {
                           otpCode = value;
@@ -97,15 +109,17 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                       },
                       keyboardType: TextInputType.number,
                       pinTheme: PinTheme(
-                        activeFillColor: AppColors.primaryColor,
                         borderWidth: 1,
                         shape: PinCodeFieldShape.box,
                         borderRadius: BorderRadius.circular(15),
-                        fieldHeight: 59.67,
-                        fieldWidth: 52.21,
-                        activeColor: Colors.grey,
-                        selectedColor: AppColors.primaryColor,
-                        inactiveColor: Colors.white,
+                        fieldHeight: 50,
+                        fieldWidth: 45,
+                        activeColor:
+                            isFocused ? AppColors.primaryColor : Colors.white,
+                        selectedColor:
+                            isFocused ? AppColors.primaryColor : Colors.white,
+                        inactiveColor:
+                            isFocused ? AppColors.primaryColor : Colors.white,
                       ),
                     ),
                   ),

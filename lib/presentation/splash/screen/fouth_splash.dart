@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:defcomm_mobile/core/theme/app_colors.dart';
-import 'package:defcomm_mobile/presentation/sign/screen/sign_in.dart';
+import 'package:defcomm_mobile/presentation/Auth/screen/sign_in.dart';
 import 'package:flutter/material.dart';
 
 class FourthSplashScreen extends StatefulWidget {
@@ -66,10 +66,10 @@ class _FourthSplashScreenState extends State<FourthSplashScreen> {
                     style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.Lightgreen,
+                      color: AppColors.lightGreen,
                       decoration: TextDecoration.lineThrough,
                       decorationThickness: 2,
-                      decorationColor: AppColors.Lightgreen,
+                      decorationColor: AppColors.lightGreen,
                     ),
                   ),
                   Text(
@@ -90,7 +90,7 @@ class _FourthSplashScreenState extends State<FourthSplashScreen> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.Lightgreen,
+                      color: AppColors.lightGreen,
                     ),
                   ),
                   SizedBox(height: 10),
