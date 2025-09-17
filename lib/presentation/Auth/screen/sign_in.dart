@@ -1,8 +1,8 @@
 import 'package:defcomm_mobile/core/global.dart';
 import 'package:defcomm_mobile/core/theme/app_colors.dart';
 import 'package:defcomm_mobile/core/theme/app_fonts.dart';
-import 'package:defcomm_mobile/presentation/otp/screen/verify_otp.dart';
-import 'package:defcomm_mobile/presentation/sign/widgets/phone_number_field.dart';
+import 'package:defcomm_mobile/presentation/Auth/screen/verify_otp.dart';
+import 'package:defcomm_mobile/presentation/Auth/widgets/phone_number_field.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {

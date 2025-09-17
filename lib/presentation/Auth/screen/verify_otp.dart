@@ -1,5 +1,7 @@
+import 'package:defcomm_mobile/core/global.dart';
 import 'package:defcomm_mobile/core/theme/app_colors.dart';
 import 'package:defcomm_mobile/core/theme/app_fonts.dart';
+import 'package:defcomm_mobile/presentation/Auth/screen/onboading.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
@@ -83,7 +85,9 @@ class _VerifyOtpScreenState extends State<VerifyOtpScreen> {
                   SizedBox(
                     width: 250,
                     child: PinCodeTextField(
-                      onCompleted: (value) {},
+                      onCompleted: (value) {
+                        goToPage(context, page: OnboadingScreen());
+                      },
                       appContext: context,
                       length: 4,
                       onChanged: (value) {
