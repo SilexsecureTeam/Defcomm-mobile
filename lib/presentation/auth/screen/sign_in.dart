@@ -71,7 +71,7 @@ class _SignInPageState extends State<SignInPage> {
                     ],
                   ),
 
-                  SizedBox(height: 20),
+                  SizedBox(height: 40),
                   PhoneNumberField(),
                   SizedBox(height: 200),
                 ],
