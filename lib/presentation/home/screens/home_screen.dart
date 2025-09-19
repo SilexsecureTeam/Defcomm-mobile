@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:defcomm_mobile/core/global.dart';
 import 'package:defcomm_mobile/core/theme/app_colors.dart';
 import 'package:defcomm_mobile/core/theme/app_fonts.dart';
+import 'package:defcomm_mobile/presentation/dash_board/screens/calls.dart';
 import 'package:defcomm_mobile/presentation/home/widgets/dash_board.dart';
 import 'package:defcomm_mobile/presentation/home/widgets/icon_tabs.dart';
 import 'package:flutter/material.dart';
@@ -200,7 +202,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     const SizedBox(height: 30),
 
-                    DashBoard(title: 'SECURE COMMUNICATIONS'),
+                    DashBoard(
+                      title: 'SECURE COMMUNICATIONS',
+                      chatOnTap: () {},
+                      callOnTap: goToPage(context, page: CallsScreen()),
+                      driveOnTap: () {},
+                      secureOnTap: () {},
+                      militaryOnTap: () {},
+                    ),
                     const SizedBox(height: 50),
 
                     Align(

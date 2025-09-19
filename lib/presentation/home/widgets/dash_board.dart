@@ -1,9 +1,26 @@
+import 'package:defcomm_mobile/core/global.dart';
 import 'package:defcomm_mobile/core/theme/app_colors.dart';
+import 'package:defcomm_mobile/presentation/dash_board/screens/calls.dart';
 import 'package:flutter/material.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({super.key, required this.title});
+  const DashBoard({
+    super.key,
+    required this.title,
+    required this.chatOnTap,
+    required this.callOnTap,
+    required this.driveOnTap,
+    required this.secureOnTap,
+    required this.militaryOnTap,
+    required this.selectedTab,
+  });
   final String title;
+  final void Function()? chatOnTap;
+  final void Function()? callOnTap;
+  final void Function()? driveOnTap;
+  final void Function()? secureOnTap;
+  final void Function()? militaryOnTap;
+  final int selectedTab;
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -38,10 +55,10 @@ class _DashBoardState extends State<DashBoard> {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
-                spacing: 15,
+                spacing: 20,
                 children: [
                   GestureDetector(
-                    onTap: () {},
+                    onTap: widget.chatOnTap!,
                     child: Container(
                       width: 48,
                       height: 48,
@@ -57,7 +74,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: widget.callOnTap,
                     child: Container(
                       width: 48,
                       height: 48,
@@ -73,7 +90,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: widget.driveOnTap,
                     child: Container(
                       width: 48,
                       height: 48,
@@ -89,7 +106,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: widget.secureOnTap,
                     child: Container(
                       width: 48,
                       height: 48,
@@ -105,7 +122,7 @@ class _DashBoardState extends State<DashBoard> {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: widget.militaryOnTap,
                     child: Container(
                       width: 48,
                       height: 48,
@@ -128,4 +145,48 @@ class _DashBoardState extends State<DashBoard> {
       ],
     );
   }
+}
+
+Widget _buildTab({required int index, required String icon}) {
+  final bool isSelected = index == selectedTab;
+
+  return GestureDetector(
+    onTap: () => onTabSelected(index),
+    child: Container(
+      width: 48,
+      height: 48,
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.white : AppColors.darkGreen,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Image.asset(
+        icon,
+        width: 27.3,
+        height: 27.3,
+        color: isSelected ? Colors.black : null, // invert icon color if needed
+      ),
+    ),
+  );
+}
+
+Widget _buildTab({required int index, required String icon}) {
+  final bool isSelected = index == selectedTab;
+
+  return GestureDetector(
+    onTap: () => onTabSelected(index),
+    child: Container(
+      width: 48,
+      height: 48,
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.white : AppColors.darkGreen,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Image.asset(
+        icon,
+        width: 27.3,
+        height: 27.3,
+        color: isSelected ? Colors.black : null, // invert icon color if needed
+      ),
+    ),
+  );
 }

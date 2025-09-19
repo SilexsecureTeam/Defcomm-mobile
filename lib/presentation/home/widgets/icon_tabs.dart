@@ -11,7 +11,7 @@ class _IconTabsState extends State<IconTabs> {
   @override
   Widget build(BuildContext context) {
     return Row(
-      spacing: 11,
+      spacing: 17,
       children: [
         Container(
           height: 71.21,
