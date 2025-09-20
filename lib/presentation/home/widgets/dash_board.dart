@@ -116,8 +116,8 @@ class _DashBoardState extends State<DashBoard> {
                       ),
                       child: Image.asset(
                         'assets/icon/secure.png',
-                        width: 27.3,
-                        height: 27.3,
+                        width: 27.4,
+                        height: 27.4,
                       ),
                     ),
                   ),
